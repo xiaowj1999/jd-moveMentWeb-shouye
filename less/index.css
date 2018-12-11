@@ -1,0 +1,489 @@
+/* 1. 放样式初始化 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /* 移动端都会设置盒模型为border-box */
+  box-sizing: border-box;
+  /* 去掉内边框 */
+  outline: 0;
+  /* 去除a标签的按住高亮背景色 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,
+select {
+  /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 */
+  /* 另外，select加上这个属性后，select的高度就可以改变了 */
+  -webkit-appearance: none;
+}
+/* 去掉小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* 去除图片3px间隙 */
+  vertical-align: middle;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+  /* 设置a标签的高亮背景色 手指按住的时候会出现 */
+  -webkit-tap-highlight-color: transparent;
+  color: #666;
+}
+/* 样式初始化 */
+html {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: white;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+a:active {
+  outline: 0;
+}
+a:active {
+  color: #006699;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+  border: 0;
+  outline: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+form,
+blockquote {
+  margin: 0;
+}
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none outside none;
+}
+h1,
+h2,
+h3 {
+  line-height: 2;
+  font-weight: normal;
+}
+h1 {
+  font-size: 18px;
+}
+h2 {
+  font-size: 16px;
+}
+h3 {
+  font-size: 14px;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cccccc;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cccccc;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cccccc;
+}
+/* 2. 放所有页面都会用到公共类 */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+#header {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+  background-color: rgba(222, 24, 27, 0);
+}
+#header .icon-logo {
+  width: 80px;
+  height: 45px;
+  background-image: url(../images/sprites.png);
+  background-size: 200px 200px;
+  background-position: 0 -108px;
+  padding: 10px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+#header form {
+  flex: 1;
+  padding-top: 5px;
+  position: relative;
+}
+#header form > .icon-search {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-image: url(../images/sprites.png);
+  background-size: 200px 200px;
+  background-position: -60px -108px;
+  left: 6px;
+  top: 9px;
+}
+#header form > input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 30px;
+  font-size: 12px;
+}
+#header .icon-login {
+  width: 50px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+}
+#footer {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+#footer .foot-tabs {
+  width: 100vw;
+  display: flex;
+}
+#footer .foot-tabs li {
+  width: 25vw;
+}
+#footer .foot-tabs li a {
+  text-align: center;
+  display: block;
+}
+#footer .foot-tabs li a img {
+  width: 65px;
+  height: 50px;
+}
+body {
+  background-color: #f5f5f5;
+}
+#slide img {
+  width: 100%;
+}
+#nav {
+  background-color: #fff;
+  padding: 10px 0px;
+}
+#nav .nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+#nav .nav-tabs > li {
+  width: 25vw;
+}
+#nav .nav-tabs > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+#nav .nav-tabs > li > a > img {
+  width: 50%;
+}
+#nav .nav-tabs > li > a > p {
+  padding: 5px 0px;
+}
+#main {
+  padding-bottom: 50px;
+}
+#main #jd-seckill {
+  margin: 10px ;
+  box-shadow: 0px 0px 2px #ccc;
+  background-color: #fff;
+}
+#main #jd-seckill > .seckill-title {
+  display: flex;
+  padding: 10px 10px;
+  position: relative;
+}
+#main #jd-seckill > .seckill-title img {
+  width: 20px;
+  height: 25px;
+}
+#main #jd-seckill > .seckill-title > span {
+  padding-left: 10px;
+  color: #de181b;
+}
+#main #jd-seckill > .seckill-title > div {
+  padding-left: 5px;
+}
+#main #jd-seckill > .seckill-title > div > span:not(:nth-of-type(3n)) {
+  background-color: #000;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  text-align: center;
+  line-height: 15px;
+  font-weight: bold;
+}
+#main #jd-seckill > .seckill-title > .seckill-more {
+  position: absolute;
+  right: 18px;
+  top: 10px;
+}
+#main #jd-seckill > .seckill-title > .seckill-more::after {
+  content: ">";
+}
+#main #jd-seckill > .seckill-content > .seckill-tabs {
+  display: flex;
+  padding: 5px;
+}
+#main #jd-seckill > .seckill-content > .seckill-tabs li {
+  flex: 33.33vw;
+  text-align: center;
+  display: flex;
+}
+#main #jd-seckill > .seckill-content > .seckill-tabs li > a {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+}
+#main #jd-seckill > .seckill-content > .seckill-tabs li > a img {
+  width: 100%;
+}
+#main #jd-seckill > .seckill-content > .seckill-tabs li > a span,
+#main #jd-seckill > .seckill-content > .seckill-tabs li > a del {
+  display: block;
+}
+#main #jd-seckill > .seckill-content > .seckill-tabs li > a > span {
+  color: #de181b;
+}
+#main #jd-market {
+  margin: 10px;
+  box-shadow: 0px 0px 2px #ccc;
+  background-color: #fff;
+}
+#main #jd-market .market-title > h4 {
+  line-height: 30px;
+  position: relative;
+  padding-left: 30px;
+}
+#main #jd-market .market-title > h4::before {
+  content: "";
+  width: 4px;
+  height: 16px;
+  background-color: #de181b;
+  position: absolute;
+  left: 18px;
+  top: 8px;
+}
+#main #jd-market .market-content {
+  display: flex;
+}
+#main #jd-market .market-content .left {
+  width: 50vw;
+  text-align: center;
+}
+#main #jd-market .market-content .left a {
+  display: block;
+}
+#main #jd-market .market-content .left a img {
+  width: 100%;
+}
+#main #jd-market .market-content .right {
+  width: 50vw;
+  text-align: center;
+}
+#main #jd-market .market-content .right a {
+  display: block;
+}
+#main #jd-market .market-content .right a img {
+  width: 100%;
+}

@@ -1,0 +1,429 @@
+/* 1. 放样式初始化 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /* 移动端都会设置盒模型为border-box */
+  box-sizing: border-box;
+  /* 去掉内边框 */
+  outline: 0;
+  /* 去除a标签的按住高亮背景色 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,
+select {
+  /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 */
+  /* 另外，select加上这个属性后，select的高度就可以改变了 */
+  -webkit-appearance: none;
+}
+/* 去掉小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* 去除图片3px间隙 */
+  vertical-align: middle;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+  /* 设置a标签的高亮背景色 手指按住的时候会出现 */
+  -webkit-tap-highlight-color: transparent;
+  color: #666;
+}
+/* 样式初始化 */
+html {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: white;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+a:active {
+  outline: 0;
+}
+a:active {
+  color: #006699;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+  border: 0;
+  outline: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+form,
+blockquote {
+  margin: 0;
+}
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none outside none;
+}
+h1,
+h2,
+h3 {
+  line-height: 2;
+  font-weight: normal;
+}
+h1 {
+  font-size: 18px;
+}
+h2 {
+  font-size: 16px;
+}
+h3 {
+  font-size: 14px;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cccccc;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cccccc;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cccccc;
+}
+/* 2. 放所有页面都会用到公共类 */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+#header {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+  background-color: rgba(222, 24, 27, 0);
+}
+#header [class^="icon-"],
+#header [class*=" icon-"] {
+  background-image: url(../images/sprites.png);
+  background-size: 200px 200px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+#header .icon-back {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background-position: -20px 0;
+}
+#header .icon-logo {
+  width: 80px;
+  height: 45px;
+  background-position: 0 -108px;
+  padding: 10px;
+}
+#header form {
+  flex: 1;
+  padding-top: 5px;
+  position: relative;
+}
+#header form > .icon-search {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-position: -60px -108px;
+  left: 6px;
+  top: 9px;
+}
+#header form > input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 30px;
+  font-size: 12px;
+}
+#header .login {
+  width: 50px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+}
+#header .icon-menu {
+  background-position: -60px 0;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+#footer {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 999;
+}
+#footer .foot-tabs {
+  width: 100vw;
+  display: flex;
+}
+#footer .foot-tabs li {
+  width: 25vw;
+}
+#footer .foot-tabs li a {
+  text-align: center;
+  display: block;
+}
+#footer .foot-tabs li a img {
+  width: 65px;
+  height: 50px;
+}
+body {
+  height: 100vh;
+  /* 而且body设置了padding 导致内容减少45-50   == 总高度-95 */
+}
+#header {
+  background-color: #ccc;
+}
+#main {
+  display: flex;
+  height: 100%;
+  padding: 40px 0px;
+}
+#main .swiper-left .swiper-container {
+  height: 100%;
+}
+#main .swiper-left .swiper-container .swiper-slide {
+  height: auto;
+}
+#main .swiper-left .swiper-container .swiper-slide ul li {
+  width: 85px;
+}
+#main .swiper-left .swiper-container .swiper-slide ul li.active a {
+  color: #de181b;
+  background-color: #fff;
+}
+#main .swiper-left .swiper-container .swiper-slide ul li a {
+  background-color: #eee;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  display: block;
+}
+#main .swiper-right {
+  flex: 1;
+  padding: 10px;
+  height: 100%;
+}
+#main .swiper-right .swiper-container {
+  height: 100%;
+}
+#main .swiper-right .swiper-container .swiper-slide {
+  height: auto;
+}
+#main .swiper-right .swiper-container .swiper-slide .jd-brand > .brand-title {
+  padding: 10px;
+}
+#main .swiper-right .swiper-container .swiper-slide .jd-brand > .brand-content ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#main .swiper-right .swiper-container .swiper-slide .jd-brand > .brand-content ul li {
+  width: 33.33%;
+}
+#main .swiper-right .swiper-container .swiper-slide .jd-brand > .brand-content ul li a {
+  display: block;
+  text-align: center;
+}
+#main .swiper-right .swiper-container .swiper-slide .jd-brand > .brand-content ul li a img {
+  width: 70px;
+}
+#main .swiper-right .swiper-container .swiper-slide .jd-brand > .brand-content ul li a span {
+  display: block;
+}

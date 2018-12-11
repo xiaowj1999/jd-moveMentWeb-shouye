@@ -1,0 +1,161 @@
+/* 需要引入公共样式在index.less里面引入  就没有必要在页面中引入多个文件减少请求*/
+
+@import 'base.less';
+
+/* 轮播图区域的样式 */
+
+#slide {
+    img {
+        width: 100%;
+    }
+    .swiper-pagination-bullet {
+        background-color: transparent;
+        border: 1px solid #fff;
+        opacity: 1;
+        width: 0.21621621621621623rem;
+        height: 0.21621621621621623rem;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+    }
+}
+
+
+/* 导航区域的样式 */
+
+#nav {
+    padding: 0.2702702702702703rem;
+    >ul {
+        display: flex;
+        /* 让ul支持换行 */
+        flex-wrap: wrap;
+        >li {
+            width: 25%;
+            >a {
+                display: block;
+                text-align: center;
+                >img {
+                    width: 1.0810810810810811rem;
+                    height: 1.0810810810810811rem;
+                }
+                >p {
+                    margin: 0.13513513513513514rem 0;
+                }
+            }
+        }
+    }
+}
+
+
+/* 主体商品的样式 */
+
+#main {
+    background-color: #f5f5f5;
+    padding: 0.2702702702702703rem;
+    .seckill {
+        background-color: #fff;
+        box-shadow: 0px 0px 0.02702702702702703rem #666;
+        margin-top: 0.2702702702702703rem;
+        .title {
+            height: 0.8108108108108109rem;
+            line-height: 0.8108108108108109rem;
+            border-bottom: 1px solid @border-color;
+            .seckill-icon {
+                width: 0.5405405405405406rem;
+                height: 0.6756756756756757rem;
+                margin-left: 0.2702702702702703rem;
+                margin-bottom: 0.08108108108108109rem;
+            }
+            .seckill-name {
+                color: @main-color;
+                margin-left: 0.2702702702702703rem;
+            }
+            .seckill-time {
+                margin-left: 0.2702702702702703rem;
+                span {
+                    width: 0.40540540540540543rem;
+                    height: 0.40540540540540543rem;
+                    display: inline-block;
+                    background-color: #000;
+                    color: #fff;
+                    line-height: 0.40540540540540543rem;
+                    text-align: center;
+                    &:nth-child(3n) {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }
+            .seckill-more {
+                float: right;
+                margin-right: 0.2702702702702703rem;
+            }
+        }
+        .content {
+            padding: 0.2702702702702703rem 0;
+            >ul {
+                display: flex;
+                >li {
+                    flex: 1;
+                    >a {
+                        display: block;
+                        text-align: center;
+                        >img {
+                            width: 2.972972972972973rem;
+                            height: 2.972972972972973rem;
+                        }
+                        >span {
+                            display: block;
+                            color: @main-color;
+                            font-size: 0.32432432432432434rem;
+                        }
+                        >del {
+                            display: block;
+                            color: @border-color;
+                            font-size: 0.32432432432432434rem;
+                        }
+                    }
+                    & + li {
+                        border-left: 1px solid @border-color;
+                    }
+                }
+            }
+        }
+    }
+    .jd-market {
+        margin-top: 0.2702702702702703rem;
+        background-color: #fff;
+        box-shadow: 0px 0px 0.02702702702702703rem @border-color;
+        .title {
+            border-bottom: 1px solid @border-color;
+            >h4 {
+                height: 0.8108108108108109rem;
+                line-height: 0.8108108108108109rem;
+                position: relative;
+                padding-left: 0.5405405405405406rem;
+                font-weight: normal;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 0.10810810810810811rem;
+                    height: 0.3783783783783784rem;
+                    background-color: @main-color;
+                    left: 0.2702702702702703rem;
+                    top: 0.21621621621621623rem;
+                }
+            }
+        }
+        .content {
+            display: flex;
+            >div {
+                flex: 1;
+                >a {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
